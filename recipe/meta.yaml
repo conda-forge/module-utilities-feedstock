@@ -1,5 +1,5 @@
 {% set name = "module-utilities" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/module-utilities-{{ version }}.tar.gz
-  sha256: e943ed5c8b5ecaa7b2e3456dd8da0dcb5658076b09dd2ea99d7988e951204e4b
+  sha256: 66529372cba3ff6c5cc69f6587394df68261edcef5c29abe690790587c9533d2
 
 build:
   noarch: python
