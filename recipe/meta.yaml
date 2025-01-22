@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/module-utilities-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/module-utilities-{{ version }}.tar.gz
   sha256: 5b8888cd15900259142b2e6c81fd83256fbe5e9dbebe357b982fc434d5b7a44a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.2
     - setuptools-scm >=7.0
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - typing-extensions
 
 test:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/usnistgov/module-utilities
